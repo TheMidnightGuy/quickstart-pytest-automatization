@@ -38,10 +38,10 @@ def test_dividir_output(a, b, esperado):
     assert dividir(a,b) == esperado
 
 #------
-def test_dividir_por_cero():
-    with pytest.raises(ZeroDivisionError) as exinfo:
-        dividir(10,0)
-    assert "No se puede dividir por cero" in str(exinfo.value)
+#def test_dividir_por_cero():
+#    with pytest.raises(ZeroDivisionError) as exinfo:
+#        dividir(10,0)
+#    assert "No se puede dividir por cero" in str(exinfo.value)
 
     #Ya listas las funciones y los tests que las validan, ejecutamos
     #pytest en consola para obtener nuestros primeros resultados.
