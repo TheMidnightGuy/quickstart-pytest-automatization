@@ -43,7 +43,7 @@ output = "reports/coverage/coverage.json"
 # --maxfail=3           -> maximo 3 fallos
 # --disable-warnings    -> deshabilita advertencias
 
-addopts = "-v --maxfail=100 --disable-warnings"
+addopts = "-v --maxfail=100 --disable-warnings ---cov=src --cov-report=xml --cov-report=html --cov-report=json"
 
 # Marcadores personalizados (ejemplo)
 markers = [
