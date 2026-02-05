@@ -10,7 +10,6 @@ from operaciones import suma, resta, dividir
 @pytest.mark.parametrize("a, b, esperado",[
     (4, 6, 10), #se espera 10 como primer resultado
     (10, 8, 18), #se espera 20 como segundo resultado
-    (10, 8, 20),
 ])
 #Creamos tests en base a las funciones que creamos anteriormente
 
@@ -23,7 +22,6 @@ def test_suma_output(a, b, esperado):
 @pytest.mark.parametrize("a, b, esperado",[
     (20, 10, 10),
     (30, 10, 20),
-    (30, 10, 10),
 ])
 
 def test_resta_output(a, b, esperado):
@@ -35,13 +33,12 @@ def test_resta_output(a, b, esperado):
 @pytest.mark.parametrize("a, b, esperado",[
     (25, 5, 5),
     (10, 2, 5),
-    (25, 5, 0),
 ])
 def test_dividir_output(a, b, esperado):
     assert dividir(a,b) == esperado
 
 #------
-#def test_dividir_por_cero():
+def test_dividir_por_cero():
     with pytest.raises(ZeroDivisionError) as exinfo:
         dividir(10,0)
     assert "No se puede dividir por cero" in str(exinfo)
