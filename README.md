@@ -1,5 +1,5 @@
 <!-- comentarios -->
-#Proyecto: PyTest Quickstart
+# Proyecto: PyTest Quickstart
 
 #Introducción
 Este proyecto es una guía de inicio en PyTest en la cual aprenderas a:
@@ -9,7 +9,7 @@ Este proyecto es una guía de inicio en PyTest en la cual aprenderas a:
 - Generar reportes de coverage en distintos formatos (HTML, JSON, XML)
 - Automatización con GitHub Actions
 
-##Instalación
+## Instalación
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
@@ -17,12 +17,12 @@ venv\Scripts\activate      # Windows
 pip install -e .
 ```
 
-##Verificamos
+## Verificamos
 ```bash
 pytest --version
 ```
 
-##Uso de funciones
+## Uso de funciones
 ```python
 def dividir_seguro(a: int, b: int) -> float:
 	"Divide dos numeros y lanza Valuerror si b es cero"
@@ -31,14 +31,14 @@ def dividir_seguro(a: int, b: int) -> float:
 	return a / b
 ```
 
-##Tests
+## Tests
 ```bash
 pytest -v
 ```
 
-##Cobertura
+## Cobertura
 ```bash
 pytest --cov=src
 ```
 
-#Automatización con GitHub Actions
+# Automatización con GitHub Actions
