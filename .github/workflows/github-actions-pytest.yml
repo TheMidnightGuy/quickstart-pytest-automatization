@@ -23,7 +23,7 @@ jobs:
       - name: Test con pytest
         run: pytest --cov=src --cov-report=xml --cov-report=html --cov-report=json
       - name: guardar reportes
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: reportes-cobertura
           path: reports/coverage/
