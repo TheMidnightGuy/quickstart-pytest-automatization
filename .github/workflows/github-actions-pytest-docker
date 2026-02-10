@@ -9,6 +9,7 @@
 
 name: Docker PyTest Test
 run-name: ${{ github.actor }} esta creando un flujo de trabajo en Docker! 🐋
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
