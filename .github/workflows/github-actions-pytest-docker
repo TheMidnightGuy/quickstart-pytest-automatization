@@ -1,0 +1,44 @@
+
+#Workflow CI/CD - Docker Pytest
+#chequear versión de python
+#correr tests de pytest
+#build
+#tag-dev
+#tag-prod
+#tag-release
+
+name: Docker PyTest Test
+run-name: ${{ github.actor }} esta creando un flujo de trabajo en Docker! 🐋
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Run tests
+        run: pytest
+
+  docker-build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t myapp:${{ github.sha }} .
+
+      - name: Tag dev
+        if: github.ref == 'refs/heads/dev'
+        run: docker tag myapp:${{ github.sha }} myapp:dev
+
+      - name: Tag prod
+        if: github.ref == 'refs/heads/main'
+        run: docker tag myapp:${{ github.sha }} myapp:prod
+
+      - name: Tag release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: docker tag myapp:${{ github.sha }} myapp:${{ github.ref_name }}
+
