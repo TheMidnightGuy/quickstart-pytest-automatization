@@ -1,7 +1,7 @@
 <!-- comentarios -->
 # Proyecto: PyTest Quickstart
 
-#Introducción
+# Introducción
 Este proyecto es una guía de inicio en PyTest en la cual aprenderas a:
 - Estructurar un proyecto Python con "pyproject.toml"
 - Crear funciones simples dentro de /src
